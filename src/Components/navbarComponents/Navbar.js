@@ -26,7 +26,7 @@ export default function Navbar(props) {
                 <div>
                     <div className="nav-disp-btn" onClick={handleDisplayToggle}>
                         <div className="nav-disp-icon nav-disp-filter">
-                            <img src="/assets/display.svg" alt="icon" />
+                            <img src="/assets/Display.svg" alt="icon" />
                         </div>
                         <div className="nav-disp-heading">
                             Display

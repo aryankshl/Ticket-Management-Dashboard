@@ -1,0 +1,118 @@
+.ticket-card-container {
+    position: relative;
+    width: 100%;
+    height: 6.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: .5rem;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 8px 1px #ccc;
+    background-color: var(--white1);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ticket-card-id-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-card-id {
+    color: var(--textgrey);
+    font-size: .72rem;
+    font-weight: 500;
+}
+
+.ticket-card-profile {
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white1);
+    background-color: #b06e0c;
+    border-radius: 50%;
+    font-size: .55rem;
+    position: relative;
+}
+
+.ticket-card-profile-initial {
+    text-transform: uppercase;
+}
+
+.ticket-card-profile-available {
+    height: 12px;
+    width: 12px;
+    background-color: var(--grey1);
+    border: 1.5px solid var(--white1);
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    left: 65%;
+    top: 65%;
+}
+
+.ticket-card-profile-available-true {
+    background-color: rgb(72, 223, 12);
+}
+
+.ticket-card-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--black1);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1rem;
+}
+
+.ticket-card-tag {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.ticket-card-tag-icon {
+    border: 1px solid var(--grey1);
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    margin-right: .5rem;
+    padding: 2px;
+}
+
+.ticket-card-tag-icon > img {
+    color: var(--textgrey);
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-card-tag-box {
+    border: 1px solid var(--grey1);
+    padding: .25rem;
+    border-radius: .3rem;
+    width: fit-content;
+}
+
+.ticket-card-tag-title {
+    font-size: .6rem;
+    font-weight: 500;
+    color: var(--textgrey);
+}
+
+.ticket-card-tag-title::before {
+    display: inline-block;
+    content: " ";
+    height: 7px;
+    width: 7px;
+    background-color: var(--textgrey);
+    border-radius: 50%;
+    margin-right: .2rem;
+}

@@ -27,5 +27,5 @@ The Ticket Management Dashboard displays a list of tickets fetched from an exter
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/aryanksl/ticket-management-dashboard.git
+   git clone https://github.com/aryankshl/Ticket-Management-Dashboard.git
    cd ticket-management-dashboard

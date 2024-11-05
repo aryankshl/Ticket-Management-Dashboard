@@ -1,11 +1,25 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import "./List.css";
 import Card from "../cardComponents/Card";
 
-let cardCount = 0;
-
 export default function List(props) {
+  const [cardCount, setCardCount] = useState(0);
+
+  useEffect(() => {
+    // Calculate the count of tickets matching the current grouping
+    const count = props.ticketDetails.filter((ticket) => {
+      if (props.groupValue === "status") {
+        return ticket.status === props.listTitle;
+      } else if (props.groupValue === "priority") {
+        return ticket.priority === props.listTitle;
+      } else if (props.groupValue === "user") {
+        return ticket.userObj.name === props.listTitle;
+      }
+      return false;
+    }).length;
+    setCardCount(count);
+  }, [props.ticketDetails, props.listTitle, props.groupValue]);
+
   return (
     <>
       <div className="list-container">
@@ -127,19 +141,16 @@ export default function List(props) {
         </div>
 
         <div className="list-card-items">
-          {props.ticketDetails.map((ticket) => {
-            if (ticket.status === props.listTitle) {
-              cardCount++;
-              return <Card cardDetails={ticket} />;
-            } else if (ticket.priority === props.listTitle) {
-              cardCount++;
-              return <Card cardDetails={ticket} />;
-            } else if (ticket.userObj.name === props.listTitle) {
-              cardCount++;
-              return <Card cardDetails={ticket} />;
+          {props.ticketDetails.map((ticket, index) => {
+            if (
+              (props.groupValue === "status" && ticket.status === props.listTitle) ||
+              (props.groupValue === "priority" && ticket.priority === props.listTitle) ||
+              (props.groupValue === "user" && ticket.userObj.name === props.listTitle)
+            ) {
+              return <Card key={index} cardDetails={ticket} />;
             }
             return null;
-          }, (cardCount = 0))}
+          })}
         </div>
       </div>
     </>

@@ -6,7 +6,6 @@ export default function List(props) {
   const [cardCount, setCardCount] = useState(0);
 
   useEffect(() => {
-    // Calculate the count of tickets matching the current grouping
     const count = props.ticketDetails.filter((ticket) => {
       if (props.groupValue === "status") {
         return ticket.status === props.listTitle;
